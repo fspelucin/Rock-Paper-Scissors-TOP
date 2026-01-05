@@ -20,5 +20,17 @@ function getHumanChoice(){
   return humanChoice
 }
 
-function playRound()
+function playRound(humanChoice,computerChoice){
+  //List of conditionals, to get the winner.
+  //Console.log the winner of the round
+}
+
+function playgame(){
+  //Create points variable
+  //forloop 5 times 
+  //gethuman and computer choice and attach it to variable
+  //platround
+  //modify points
+  //console log winner of the game
+}
 console.log("Hello World")
