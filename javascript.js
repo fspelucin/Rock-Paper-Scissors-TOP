@@ -3,11 +3,19 @@ let computerScore = 0;
 
 function getComputerChoice(){
   //Get a random number from 1 to 3
-  let computerChoice = Math.floor(Math.random() * 3);
-  //Declare computerChoide variable
-  //Switch random number to a rock-papper-scisors string value
-  //Put that value into computerChoice variable
-  //Return computerChoice variable
+  let computerChoice; 
+  let randomNumber = Math.floor(Math.random() * 3);
+  console.log(randomNumber)
+  if (randomNumber == 0) {
+    computerChoice = "rock"}
+  else{
+    if(randomNumber == 1) {
+      computerChoice = "papper"
+    }
+    else {
+      computerChoice = "scissors"
+    }
+  }
 
   return computerChoice
 }
