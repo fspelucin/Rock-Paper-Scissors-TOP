@@ -16,20 +16,22 @@ function getComputerChoice(){
       computerChoice = "scissors"
     }
   }
-
   return computerChoice
 }
 
 let computerChoice = getComputerChoice();
 
-//function getHumanChoice(){
+function getHumanChoice(){
   //Declare HumanChoice variable
+  let HumanChoice; 
   //Use prompt method to get usser input
+  let input = prompt("rock, papper or scissors?");
   //Make usser input case insensitive
   //Attach usser imput to getHumanChoice value
+  HumanChoice = input.toLowerCase();
   //Return humanChoice value
-  //return humanChoice
-//}
+  return HumanChoice
+}
 
 //function playRound(humanChoice,computerChoice){
   //List of conditionals, to get the winner.
