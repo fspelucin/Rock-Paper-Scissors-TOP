@@ -5,7 +5,6 @@ function getComputerChoice(){
   //Get a random number from 1 to 3
   let computerChoice; 
   let randomNumber = Math.floor(Math.random() * 3);
-  console.log(randomNumber)
   if (randomNumber == 0) {
     computerChoice = "rock"}
   else{
@@ -32,18 +31,23 @@ function getHumanChoice(){
   //Return humanChoice value
   return HumanChoice
 }
+let humanScore = 0;
+let computerScore = 0;
 
-//function playRound(humanChoice,computerChoice){
+function playRound(humanScore,computerScore){
+  //Get humanChoice and computerChoice
+  let humanChoice = getHumanChoice();
+  let computerChoice = getComputerChoice();
   //List of conditionals, to get the winner.
   //Console.log the winner of the round
-//}
+  //Return humanScore and computerScore
+}
 
 //function playgame(){
-  //Create points variable
+  //Create score variable
   //forloop 5 times 
   //gethuman and computer choice and attach it to variable
   //platround
   //modify points
   //console log winner of the game
-//}
-console.log(computerChoice)
+//
