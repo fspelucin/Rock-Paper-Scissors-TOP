@@ -27,42 +27,36 @@ function getHumanChoice(){
   return HumanChoice
 }
 
-function playRound(humanScore,computerScore){
+function playRound(){
   //Get humanChoice and computerChoice
   let humanChoice = getHumanChoice();
   let computerChoice = getComputerChoice();
-  let winner;
+  let winner = "Draw";
   //List of conditionals, to get the winner.
-  if (humanChoice==computerChoice){
-    console.log("This round is a DRAW!!!");
-    return
+  if (humanChoice  === computerChoice){
+    console.log(`Human chose ${humanChoice}, Computer chose ${computerChoice}. This round is a DRAW!!!`);
   }
   else {
-    if ((humanChoice=="rock")&&(computerChoice=="papper")){
+    if ((humanChoice === "rock")&&(computerChoice === "scissors")){
       winner = "Human";
-      humanScore = humanScore ++;
+      console.log(`Human chose ${humanChoice}, Computer chose ${computerChoice}. The winner is ${winner}`);
+      return winner
     }
-    if((humanChoice=="papper")&&(computerChoice=="rock")){
+    if((humanChoice === "papper")&&(computerChoice === "rock")){
       winner = "Human";
-      humanScore = humanScore ++;
+      console.log(`Human chose ${humanChoice}, Computer chose ${computerChoice}. The winner is ${winner}`);
+      return winner
     }
-    if ((humanChoice=="scissors")&&(computerChoice=="papper")){
-      winner = "Human" 
-      humanScore = humanScore ++;
+    if ((humanChoice === "scissors")&&(computerChoice === "papper")){
+      winner = "Human";
+      console.log(`Human chose ${humanChoice}, Computer chose ${computerChoice}. The winner is ${winner}`);
+      return winner
     }
-    else {
-      winner = "Computer"
-      computerScore = computerScore ++;
+   else {
+      winner = "Computer";
+      console.log(`Human chose ${humanChoice}, Computer chose ${computerChoice}. The winner is ${winner}`);
+      return winner
     }
-  }
-  //Console.log the winner of the round
-  console.log(`Human chose ${humanChoice}, Computer chose ${computerChoice}. The winner is ${winner}`);
-  //Return humanScore and computerScore
-  if (winner == "Human"){
-    return humanScore
-  } 
-  else{
-    return computerScore
   }
 }
 
@@ -70,21 +64,32 @@ function playgame(){
   //Create score variable
   let humanScore = 0;
   let computerScore = 0;
+  let winner;
   //forloop 5 times 
   for (let i = 0; i < 5; i++) {
-    playRound(humanScore, computerScore);
+    winner = playRound();
+    if (winner === "Human"){
+      humanScore++;
+    }
+    if (winner === "Computer"){
+      computerScore++;
+    }
   }
   //console log winner of the game
   if (humanScore==computerScore){
     console.log ("This game was a DRAW!!!");
+    return
   }
   else{
     if(humanScore > computerScore){
       console.log("The winner of this game is the HUMAN");
+      return
     } 
     else {
       console.log("The winner of this game was the COMPUTER");      
+      return
     }
   }
+}
 
 playgame(); 
